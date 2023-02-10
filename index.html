@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>LuChess</title>	
+		<link href="styles.css" rel="stylesheet" type="text/css">	
+		<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
+	</head>
+	<body id="body">
+		<div class="container">
+				
+			<header>
+				<center><h3>LuChess</h3></center>	
+			</header>	
+			<div id="FenInDiv">
+				<span style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 28px;">პოზიციის fen კოდი:</span> <br/>
+				<input type="text" id="fenIn"/>		
+				<button type="button" id="SetFen">დააყენე პოზიცია</button>			
+			</div>	
+			<div id="Board">
+			</div>
+			<div id="EngineOutput"> <span style="width: 100%; text-align: center;">ფიქრის დრო:</span> <br/>
+				<select id="ThinkTimeChoice">
+				<option value="1">1წმ</option>
+				<option value="2">2წმ</option>
+				<option value="4">4წმ</option>
+				<option value="6">6წმ</option>
+				<option value="8">8წმ</option>
+				<option value="10">10წმ</option>
+				</select><br/><br/><br/>
+				<span id="BestOut">საუკეთესო მოძრაობა:</span><br/>
+				<span id="DepthOut">ხარისხი:</span><br/>
+				<span id="ScoreOut">ქულა:</span><br/>
+				<span id="OrderingOut">სიზუსტე:</span><br/>
+				<span id="TimeOut">დრო:</span><br/><br/>
+				<div class="buttonsbtnss">
+				<button type="button" id="SearchButton" title="საუკეთესო სვლა">?</button><br/>
+				<button type="button" id="NewGameButton" title="ახალი თამაში">+</button><br/>
+				<button type="button" id="TakeButton" title="უკუსვლა">↶</button><br/><br/><br/></div>
+				<span id="GameStatus"></span>
+			</div>
+			
+			<script src="js/jquery-1.10.1.min.js"></script>		
+			<script src="js/defs.js"></script>	
+			<script src="js/io.js"></script>	
+			<script src="js/board.js"></script>	
+			<script src="js/movegen.js"></script>	
+			<script src="js/makemove.js"></script>		
+			<script src="js/evaluate.js"></script>	
+			<script src="js/pvtable.js"></script>
+			<script src="js/search.js"></script>
+			<script src="js/perft.js"></script>
+			<script src="js/gui.js"></script>
+			<script src="js/main.js"></script>
+			<div class="instructions">
+				<button id="openInstructions" onclick="instructionShowHide();">ინსტრუქცია v</button>
+				<div id="instructions">
+					<p>
+						კეთილი იყოს თქვენი მობრძანება LuChess-ზე. <br> <br>
+						აქ თქვენ შეძლებთ განვითარდეთ ჭადრაკში ჭკვიანი კომპიუტერის წინააღმდეგ თამაშის საშუალებით. <br>
+						ჭადრაკის დაფის მარჯვნივ მოცემულია სხვადასხვა მონაცემები, რომელიც დაგეხმარებათ თამაშის თვითგაანალიზებაში. ასევე საშუალება გეძლევათ დაფის ზემოთ, სპეციალურ უჯრაში ჩასვათ ჭადრაკის ფიგურათა განლაგების საერთაშორისო კოდი FEN(Forsyth-Edwards Notation), რათა განიხილოთ სხვადასხვა პოზიციები. <br>
+						(კომპიუტერის 'ფიქრის დროს' გაზრდით, იგი უფრო ზუსტ გამოთვლებს (სვლებს) გააკეთებს.)
+					</p>
+					<p style="text-align: left;">
+						კეთილი სურვილებით - ლუკა ბერაძე (LuChess).
+					</p>
+				</div>
+			</div>
+			<script>
+				const instructions = document.getElementById('instructions');
+				const body = document.getElementById('body');
+				
+				function instructionShowHide() {
+
+				if (instructions.style.display == 'block') {
+					instructions.style.display = 'none';
+					body.style.overflowY = 'hidden';
+
+				} else {
+					instructions.style.display = 'block';
+					body.style.overflowY = 'scroll';
+				}
+			}
+
+			</script>
+	</div>	
+		<footer>
+			©LuChess 2023  <br>
+			®all Rights Reserved.
+		</footer>
+	
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
