@@ -22,6 +22,8 @@ function ClearPiece(sq) {
 
 }
 
+let movesound = new Audio('move.wav');
+
 function AddPiece(sq, pce) {
 
 	var col = PieceCol[pce];
@@ -139,7 +141,7 @@ function MakeMove(move) {
          TakeMove();
     	return BOOL.FALSE;
     }
-    
+    movesound.play();
     return BOOL.TRUE;
 }
 
