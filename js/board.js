@@ -200,6 +200,7 @@ function ResetBoard() {
 	GameBoard.castlePerm = 0;	
 	GameBoard.posKey = 0;
 	GameBoard.moveListStart[GameBoard.ply] = 0;
+	removeWinLoseScreen();
 	
 }
 
