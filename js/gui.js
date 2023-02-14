@@ -11,6 +11,27 @@ $('#TakeButton').click( function () {
 	}
 });
 
+const boardPos = document.getElementById('Board').getBoundingClientRect();
+const winScreen = document.getElementById('winScreen');
+const loseScreen = document.getElementById('loseScreen');
+const drawScreen = document.getElementById('drawScreen');
+
+function screenspos() {
+	winScreen.style.top = boardPos.y + 'px';
+	winScreen.style.left = boardPos.x + 'px';
+	loseScreen.style.top = boardPos.y + 'px';
+	loseScreen.style.left = boardPos.x + 'px';
+	drawScreen.style.top = boardPos.y + 'px';
+	drawScreen.style.left = boardPos.x + 'px';
+}
+function removeWinLoseScreen() {
+	winScreen.style.display = 'none';
+	loseScreen.style.display = 'none';
+	drawScreen.style.display = 'none';
+} 
+screenspos();
+
+
 $('#NewGameButton').click( function () {
 	NewGame(START_FEN);
 });
@@ -270,10 +291,12 @@ function CheckResult() {
 	
 	if(InCheck == BOOL.TRUE) {
 		if(GameBoard.side == COLOURS.WHITE) {
-	      $("#GameStatus").text("შავმა გაიმარჯვა!");
+	      $("#GameStatus").text("კომპიუტერმა გაიმარჯვა!");
+		loseScreen.style.display = 'block';
 	      return BOOL.TRUE;
         } else {
-	      $("#GameStatus").text("თეთრმა გაიმარჯვა!");
+	      $("#GameStatus").text("შენ გაიმარჯვე!");
+		winScreen.style.display = 'block';
 	      return BOOL.TRUE;
         }
 	} else {
