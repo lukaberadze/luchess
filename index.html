@@ -56,43 +56,10 @@
 			<script src="js/perft.js"></script>
 			<script src="js/gui.js"></script>
 			<script src="js/main.js"></script>
-			<div class="instructions">
-				<button id="openInstructions" onclick="instructionShowHide();">ინსტრუქცია v</button>
-				<div id="instructions">
-					<p>
-						კეთილი იყოს თქვენი მობრძანება LuChess-ზე. <br> <br>
-						აქ თქვენ შეძლებთ განვითარდეთ ჭადრაკში ჭკვიანი კომპიუტერის წინააღმდეგ თამაშის საშუალებით. <br>
-						ჭადრაკის დაფის მარჯვნივ მოცემულია სხვადასხვა მონაცემები, რომელიც დაგეხმარებათ თამაშის თვითგაანალიზებაში. ასევე საშუალება გეძლევათ დაფის ზემოთ, სპეციალურ უჯრაში ჩასვათ ჭადრაკის ფიგურათა განლაგების საერთაშორისო კოდი FEN(Forsyth-Edwards Notation), რათა განიხილოთ სხვადასხვა პოზიციები. <br>
-						(კომპიუტერის 'ფიქრის დროს' გაზრდით, იგი უფრო ზუსტ გამოთვლებს (სვლებს) გააკეთებს.)
-					</p>
-					<p style="text-align: left;">
-						<em>მ.ბ.ს მე-11 კლასის მოსწავლე - ლუკა ბერაძე (LuChess).</em>
-					</p>
-				</div>
-			</div>
-			<script>
-				const instructions = document.getElementById('instructions');
-				const body = document.getElementById('body');
-				
-				function instructionShowHide() {
-
-				if (instructions.style.display == 'block') {
-					instructions.style.display = 'none';
-					body.style.overflowY = 'hidden';
-					window.scrollTo(0, 0);
-
-				} else {
-					instructions.style.display = 'block';
-					body.style.overflowY = 'scroll';
-				}
-			}
-
-			</script>
 	</div>	
 		<footer>
-			©LuChess 2023  <br>
+			©GeKaChess 2023  <br>
 			®all Rights Reserved.
-			<img src="images/fbs-logo.jpg" alt="fbs-logo" style="border-radius: 6px; margin-left: 10px;">
 		</footer>
 	<!--george kindson and other visitors, if you see this message from luka, you are great.-->
 	</body>
